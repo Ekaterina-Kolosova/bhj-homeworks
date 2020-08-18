@@ -7,32 +7,20 @@ let sliderDot = document.querySelectorAll("div.slider__dot");
 sliderDot = Array.from(sliderDot);
 
 let slideNumber = 0;
-
-
-
-sliderArrowNext.onclick = function () {
+function changeSlide() {
 	sliderItem[slideNumber].className = "slider__item";
 	sliderDot[slideNumber].className = "slider__dot";
 	slideNumber++;
 	if (slideNumber >= sliderItem.length) {
 	slideNumber = 0;
-	};
-	sliderItem[slideNumber].className = "slider__item slider__item_active";
-	sliderDot[slideNumber].className = "slider__dot slider__dot_active";
-};
-
-sliderArrowPrevious.onclick = function () {
-	sliderItem[slideNumber].className = "slider__item";
-	sliderDot[slideNumber].className = "slider__dot";
-	slideNumber--;
-	if (slideNumber < 0) {
+	} else if (slideNumber < 0) {
 	slideNumber = sliderItem.length - 1;
 	};
+	
 	sliderItem[slideNumber].className = "slider__item slider__item_active";
 	sliderDot[slideNumber].className = "slider__dot slider__dot_active";
 };
 
-sliderDot[slideNumber].onclick = function () {
-	sliderItem[slideNumber].className = "slider__item slider__item_active";
-	sliderDot[slideNumber].className = "slider__dot slider__dot_active";
-};
+sliderArrowNext.onclick = changeSlide;
+
+sliderArrowPrevious.onclick = changeSlide;
