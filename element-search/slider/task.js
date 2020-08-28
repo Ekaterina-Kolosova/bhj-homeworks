@@ -20,20 +20,11 @@ for (let i = 0; i < sliderDot.length; i++) {
 		changeSlide(i);
 	};
 };
-let newSlideNumber = 0;
 
 sliderArrowNext.onclick = function () {
-	changeSlide(newSlideNumber);
-	newSlideNumber++;
-	if (newSlideNumber >= sliderItem.length) {
-		newSlideNumber = 0;
-	};
+	changeSlide(slideNumber >= sliderItem.length - 1 ? slideNumber = 0 : slideNumber + 1);
 };
 
 sliderArrowPrevious.onclick = function () {
-	changeSlide(newSlideNumber);
-	newSlideNumber--;
-	if (newSlideNumber < 0) {
-		newSlideNumber = sliderItem.length - 1;
-	};
+	changeSlide(slideNumber <= 0 ? slideNumber = sliderItem.length - 1 : slideNumber - 1);
 };
