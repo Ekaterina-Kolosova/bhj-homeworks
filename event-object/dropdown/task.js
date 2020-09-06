@@ -1,4 +1,4 @@
-const dropDownList = document.querySelector('ul.dropdown__list');
+let dropDownList = document.querySelector('ul.dropdown__list');
 let dropDownLink = document.querySelectorAll('a.dropdown__link');
 let dropDownValue = document.querySelector('div.dropdown__value');
 

@@ -18,43 +18,16 @@ class Game {
 
   registerEvents() {
   	let guessSymbol = this.currentSymbol.innerHTML;
-  	// let enteredSymbol = KeyboardEvent.keyCode;
-  	console.log(guessSymbol);
-  	// console.log(enteredSymbol);
-  	// console.log(event.keyCode);
-  	// let enteredSymbol = document.addEventListener('keydown', updatePlayer);
- //  	function updatePlayer(event) {
- //  		// KeyboardEvent.key;
- //  		// let enteredSymbol = event.key;
-	// 	// console.log(enteredSymbol);
-	// 	// if (guessSymbol === enteredSymbol) {
-	// 	// 	this.success;
-	// 	// } else {
-	// 	// 	this.fail;
-	// 	// };
-	// 	return event.key;
-	// };
-	// let enteredSymbol = String(
-	
-	document.addEventListener('keydown', event => {
-		const keyName = event.key;
+  	document.addEventListener('keyup', event => {
+		const keyName = event.key.toLowerCase();
 		if (guessSymbol === keyName) {
-			this.success;
+			this.success();
+			guessSymbol = this.currentSymbol.innerHTML;
 		} else {
-			this.fail;
+			this.fail();
+			guessSymbol = this.currentSymbol.innerHTML;
 		};
 	});	
-	// let enteredSymbol = String.fromCharCode(e);
-	// enteredSymbol.toLowerCase();
-	// console.log(e);
-	// console.log(guessSymbol);
-	// if (guessSymbol === e) {
-	// 	this.success;
-	// } else {
-	// 	this.fail;
-	// };
-	
-	// updatePlayer();
     /*
       TODO:
       Написать обработчик события, который откликается
