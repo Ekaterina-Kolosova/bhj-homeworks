@@ -8,8 +8,7 @@ function showList() {
 	dropDownList.classList.toggle("dropdown__list_active");
 };
 
-dropDownList.addEventListener("click", showList());
-
+dropDownValue.addEventListener("click", showList);
 
 for (let i = 0; i < dropDownLink.length; i++) {
 	dropDownLink[i].onclick = function () {
@@ -19,4 +18,3 @@ for (let i = 0; i < dropDownLink.length; i++) {
 		return false;
 	};
 };
-
